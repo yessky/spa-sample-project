@@ -1,0 +1,1 @@
+define("app/entry.Error",["require","exports","module","base/declare","./Page"],function(require,exports,module){var e=require("base/declare"),r=require("./Page");return e("entry.Error",[r],{baseClass:"page-entry-error",_templateString:"<div><h3>404 Not Found</h3><p>powered by span.im</p></div>",location:"/404"})});
