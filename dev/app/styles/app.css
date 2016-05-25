@@ -1,0 +1,34 @@
+/* line 2, /Users/aaron/Develop/spa-sample-project/src/app/styles/_page.Home.scss */
+.page-entry-home .ui-button {
+  margin: 0 0.2rem;
+}
+
+/* line 6, /Users/aaron/Develop/spa-sample-project/src/app/styles/_page.Home.scss */
+.page-entry-home .icons-list li > a {
+  text-align: center;
+  line-height: 150%;
+  padding: 0.08rem 0.2rem;
+}
+
+/* line 3, /Users/aaron/Develop/spa-sample-project/src/app/styles/_page.About.scss */
+.page-entry-about .icons-list li > a {
+  text-align: center;
+  line-height: 150%;
+  padding: 0.08rem 0.2rem;
+}
+
+/* line 1, /Users/aaron/Develop/spa-sample-project/src/app/styles/_page.Error.scss */
+.ks-page-entry-error {
+  background-color: #fff;
+}
+
+/* line 4, /Users/aaron/Develop/spa-sample-project/src/app/styles/_page.Error.scss */
+.page-entry-error {
+  text-align: center;
+}
+
+/* line 6, /Users/aaron/Develop/spa-sample-project/src/app/styles/_page.Error.scss */
+.page-entry-error p {
+  border-top: 1px solid #ccc;
+  padding: 10px;
+}

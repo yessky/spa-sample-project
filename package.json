@@ -1,0 +1,24 @@
+{
+  "name": "spa-sample-project",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^2.10.1",
+    "del": "^2.2.0",
+    "glob": "^7.0.0",
+    "gulp": "^3.9.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.1",
+    "gulp-svgmin": "^1.2.2",
+    "gulp-svgstore": "^6.0.0",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.5",
+    "gulp.spritesmith": "^6.2.1",
+    "html-minifier": "^1.2.0",
+    "run-sequence": "^1.1.5",
+    "through2": "^2.0.0",
+    "uglify-js": "^2.6.1",
+    "underscore": "^1.8.3"
+  }
+}

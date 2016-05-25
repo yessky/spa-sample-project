@@ -1,0 +1,21 @@
+<p class="article-title">读取ajax数据示例:</p>
+<p class="article-content"><%- data %></p>
+<p class="article-title">svg图标示例(点击图标进行导航):</p>
+<ul class="row icons-list">
+	<li class="inline"><a href="/"><svg class="icon icon-home"><use xlink:href="#icon-home"></use></svg><br>home</a></li>
+	<li class="inline"><a href="/about"><svg class="icon icon-download"><use xlink:href="#icon-download"></use></svg><br>about</a></li>
+	<li class="inline"><a href="/404"><svg class="icon icon-music"><use xlink:href="#icon-music"></use></svg><br>404/Error</a></li>
+</ul>
+<p class="article-title">事件绑定代理示例:</p>
+<ul class="row icons-list" ks-event="click@.btn-wrapped:onClickIcon">
+	<li class="inline"><span class="inline btn-wrapped" data-section="1"><svg class="icon icon-home"><use xlink:href="#icon-home"></use></svg></span></li>
+	<li class="inline"><span class="inline btn-wrapped" data-section="2"><svg class="icon icon-download"><use xlink:href="#icon-download"></use></svg></span></li>
+	<li class="inline"><span class="inline btn-wrapped" data-section="3"><svg class="icon icon-home"><use xlink:href="#icon-home"></use></svg></span></li>
+	<li class="inline"><span class="inline btn-wrapped" data-section="4"><svg class="icon icon-download"><use xlink:href="#icon-download"></use></svg></span></li>
+	<li class="inline"><span class="inline btn-wrapped" data-section="5"><svg class="icon icon-home"><use xlink:href="#icon-home"></use></svg></span></li>
+</ul>
+<p class="article-title">引用组件示例:</p>
+<p class="article-content">
+	<div ks-type="ui/Button" ks-props="title: 'ui/Button 1', onClick: onClickButton1" ks-node="button1"></div>
+	<div ks-type="ui/Button" ks-props="title: 'ui/Button Toggle disabled', onClick: onClickButton2" ks-node="button2"></div>
+</p>

@@ -1,0 +1,263 @@
+div,p,a,h1,h2,h3,h4,h5,h6,h3,
+nav,section,article,span,i,b,strong,
+table,tr,td,legend,ul,ol,li,
+form,input,button,textarea,label,
+img,svg,use {
+	line-height: 100%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-webkit-text-size-adjust: none;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: 62.5%;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+html, body {
+	width: 100%;
+	background-color: $pageBgColor;
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "Lantinghei SC", "Hiragino Sans GB", 'Microsoft YaHei', sans-serif;
+}
+
+a {
+	color: $baseFontColor;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  &:active, &:focus, &:hover {
+    text-decoration: none;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+:focus {
+	outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=text],
+input[type=number],
+input[type=email] {
+	margin: 0;
+	padding: 0;
+}
+
+input[type=submit],
+input[type=button],
+button {
+	border: none;
+	background: #fff;
+	box-shadow: none;
+	-webkit-appearance: none;
+}
+
+::-webkit-input-placeholder {
+	color:  #d6d5d5;
+	font-size: toUnit(32px);
+	text-align: left;
+  letter-spacing: normal;
+  font-weight: 100%;
+}
+
+input:focus,
+input:hover,
+input:active {
+  outline: 0;
+  margin: 0;
+  font-weight: normal;
+}
+
+label {
+	cursor: pointer;
+}
+
+// ========================================
+// 图标样式
+.icon, .inline {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+// ========================================
+// grid layout
+.row {
+	display: block;
+  clear: both;
+  .col-2 {
+    width: 16.66666666%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-4 {
+    width: 33.33333333%;
+  }
+  .col-5 {
+    width: 41.66666666%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-7 {
+    width: 58.33333333%;
+  }
+  .col-8 {
+    width: 66.66666666%;
+  }
+  .col-9 {
+    width: 75%;
+  }
+  .col-10 {
+    width: 83.33333333%;
+  }
+  [class^="col-"] {
+    float: left;
+    font-size: 0;
+  }
+  .col-left {
+	  float: left;
+	}
+	.col-right {
+	  float: right;
+	}
+}
+.row:before, .row:after {
+  content: " ";
+  display: table;
+}
+.row:after {
+  clear: both;
+}
+.table-row {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+	> .col {
+		display: table-cell;
+		vertical-align: middle;
+		font-size: 0;
+	}
+}
+
+// ========================================
+// 文本不换行裁剪
+.text-clip {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+// ========================================
+// 自适应图片
+.img-cover {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+// ========================================
+// 复选框
+.ui-checkbox {
+	display: inline;
+	line-height: 100%;
+	font-size: 0;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	input {
+		position: absolute;
+		left: -100px;
+		visibility: hidden;
+	}
+	.icon {
+		display: block;
+		opacity: 0.3;
+	}
+	input:checked + .icon {
+		opacity: 1;
+	}
+}
+
+// ========================================
+// 页面框架
+.app-header {
+	border-bottom: 1px solid gray;
+	.logo-wrapper, .header-location {
+		text-align: center;
+	}
+	.site-logo {
+		width: toUnit(220px);
+		height: toUnit(78px);
+	}
+	.header-location {
+		line-height: 150%;
+		margin-bottom: toUnit(20px);
+	}
+	.site-loc {
+		color: red;
+		font-style: italic;
+	}
+}
+
+.app-content {
+	background-color: #fff;
+	padding: toUnit(30px);
+}
+
+.article-title {
+	margin: 0;
+	margin-top: toUnit(15px);
+	padding: 0 toUnit(10px);
+	line-height: 130%;
+	@include fontsize(32px);
+	color: #333;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.article-content {
+	margin: 0;
+	padding: toUnit(10px) toUnit(20px);
+	line-height: 125%;
+	@include fontsize(28px);
+	color: #666;
+}
+
+.icons-list {
+	padding: 0;
+	> li {
+		margin: 0 toUnit(20px);
+		a {
+			display: inline-block;
+			padding: toUnit(10px);
+			background-color: $pageBgColor;
+			border: 1px solid #333;
+			border-radius: toUnit(6px);
+		}
+	}
+}
+
+.app-footer {
+	text-align: center;
+	padding: toUnit(20px);
+}

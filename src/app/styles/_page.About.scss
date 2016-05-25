@@ -1,0 +1,9 @@
+.page-entry-about {
+	.icons-list {
+		li > a {
+			text-align: center;
+			line-height: 150%;
+			padding: toUnit(8px) toUnit(20px);
+		}
+	}
+}

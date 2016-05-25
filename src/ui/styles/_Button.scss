@@ -1,0 +1,25 @@
+.ui-button {
+	white-space: nowrap;
+	padding: 5px 15px;
+	font-size: 14px;
+	color: #333;
+	border: 1px solid #333;
+	border-radius: 5px;
+	background-color: #fff;
+	min-width: 60px;
+	cursor: pointer;
+	-webkit-transition: ease .3s;
+	transition: ease .3s;
+	.button-text {
+		line-height: 30px;
+	}
+	&.ui-button-disabled {
+		cursor: not-allowed;
+		background-color: #eee;
+		border-color: #999;
+		opacity: .5;
+	}
+	&:active:not(.ui-button-disabled) {
+		background-color: #f7f7f7;
+	}
+}

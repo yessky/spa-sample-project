@@ -1,0 +1,12 @@
+.page-entry-home {
+	.ui-button {
+		margin: 0 toUnit(20px);
+	}
+	.icons-list {
+		li > a {
+			text-align: center;
+			line-height: 150%;
+			padding: toUnit(8px) toUnit(20px);
+		}
+	}
+}

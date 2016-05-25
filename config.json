@@ -1,0 +1,12 @@
+{
+	"paths": {
+		"src": "/src",
+		"dev": "/dev",
+		"temp": "/.temp",
+		"dist": "/release"
+	},
+	"baseUrl": "/",
+	"appDownloadUrl": "http://veryos.com",
+	"appAuthUrl": "http://veryos.com",
+	"appUserCenter": "http://veryos.com"
+}
