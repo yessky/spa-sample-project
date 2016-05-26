@@ -16,16 +16,16 @@
 
 ### 1.3. 配置本地nginx
 
-打开项目根目录下`nginx.conf`, 添加配置到nginx配置中
+配置好本地nginx
 
 注意修改`root`指向本机对应的目录， 端口号自行根据实际情况配置
 
 ```
-假设项目位于本机 /User/yourname/tx-spa-sample-project 目录
+假设项目位于本机 /User/yourname/spa-sample-project 目录
 
-则开发环境对应的nginx root为  /User/yourname/tx-spa-sample-project/dev
+则开发环境对应的nginx root为  /User/yourname/spa-sample-project/dev
 
-则发布环境对应的nginx root为  /User/yourname/tx-spa-sample-project/release
+则发布环境对应的nginx root为  /User/yourname/spa-sample-project/release
 ```
 
 等待完成以上步骤后，命令行 `gulp` 则将启动开发环境，自动启动浏览器
@@ -63,7 +63,7 @@ vendor 三方库资源(可能是html/js/css)
 
 base 核心库
 
-ui 常用的封装好的基础ui库(dialog/popup/alert/confirm/carousel/list/paginglist/listitem等)
+ui 基础ui库
 
 app 项目实际业务的资源
 
@@ -103,19 +103,17 @@ app/medias.js 负责项目全局的音频/视频播放控制
 
 app/ajax.js 负责项目ajax交互（对zepto/jquery的ajax方法的再一次封装）
 
-app/actions.js 包含了项目所涉及到的所有交互逻辑抽象
-
 app/services.js 统一负责项目与后端进行数据交互通信（获取数据，提交数据）
 
 app/entry.*.js 对应路由的入口文件，路由与入口映射规则详见app/routes.js
 
 ```
 
-关于loader（loader实现同requirejs的commonjs模式一致）以及模块如果定义加载，可以参考requirejs文档
+关于loader（https://github.com/yessky/loader loader实现同requirejs的commonjs模式一致）以及模块如果定义加载，可以参考requirejs文档
 
 ## 3. 打包与发布
 
-打包模块通过配置文件指定一系列的入口文件，实现了依赖自动递归扫描，依赖优先级排序，按需合并，合并按需加载模块，缓存管理等功能
+打包模块通过配置文件指定一系列的项目入口，实现了依赖自动递归扫描，依赖优先级排序，按需合并，优化按需加载模块，缓存管理等功能
 
 配置选项说明具体见kspack.profile.js中的注释内容
 
