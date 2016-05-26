@@ -31,17 +31,18 @@ define(function(require, exports, module) {
 				param: {},
 				toString: function() {
 					var key, ref, val;
-					qu = '';
+					qu = [];
 					ref = this.param;
 					for (key in ref) {
+						var p = key;
 						val = ref[key];
-						qu += key;
 						if (val !== void 0 && val !== null) {
-							qu += '=' + val;
+							p += '=' + val;
 						}
+						qu.push(p);
 					}
-					if (qu) {
-						qu = '?' + qu;
+					if (qu.length) {
+						qu = '?' + qu.join("&");
 					}
 					hs = this.hash ? '#' + this.hash : '';
 					return this.domain + qu + hs;
