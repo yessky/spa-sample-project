@@ -1,12 +1,22 @@
+<p class="article-title">本项目包含以下模块:</p>
+<p class="article-content">
+	1. mobile手机端方案完美适配所有尺寸手机设备（仅需一套设计图 ＋ 一套前端代码）<br>
+	2. 项目采用AMD管理模块依赖（AMD模块加载器在这里 https://github.com/yessky/loader）<br>
+	3. 包含scss预编译，支持css模块化<br>
+	4. 包含svg sprite矢量图标方案（一套图标满足各种尺寸分辨率要求）<br>
+	5. 包含浏览器自动刷新gulp任务，开发时自动刷新浏览器，避免频繁f5<br>
+	6. 包含前端资源打包工具，根据配置文件实现多入口打包、公用模块提取、文件添加md5指纹（实现前端资源增量更新＋缓存管理）、生成打包资源map、按需加载（打包之后部分模块仍然是按需加载）等功能（打包工具在这里 https://github.com/yessky/kspack）<br>
+	7. 包含了一个典型SPA项目资源结构示例
+</p>
 <p class="article-title">读取ajax数据示例:</p>
 <p class="article-content"><%- data %></p>
-<p class="article-title">svg图标示例(点击图标进行导航):</p>
+<p class="article-title">svg图标示例(点击图标可进行导航):</p>
 <ul class="row icons-list">
 	<li class="inline"><a href="/"><svg class="icon icon-home"><use xlink:href="#icon-home"></use></svg><br>home</a></li>
 	<li class="inline"><a href="/about"><svg class="icon icon-download"><use xlink:href="#icon-download"></use></svg><br>about</a></li>
 	<li class="inline"><a href="/404"><svg class="icon icon-music"><use xlink:href="#icon-music"></use></svg><br>404/Error</a></li>
 </ul>
-<p class="article-title">事件绑定代理示例:</p>
+<p class="article-title">事件代理示例:</p>
 <ul class="row icons-list" ks-event="click@.btn-wrapped:onClickIcon">
 	<li class="inline"><span class="inline btn-wrapped" data-section="1"><svg class="icon icon-home"><use xlink:href="#icon-home"></use></svg></span></li>
 	<li class="inline"><span class="inline btn-wrapped" data-section="2"><svg class="icon icon-download"><use xlink:href="#icon-download"></use></svg></span></li>
@@ -14,8 +24,8 @@
 	<li class="inline"><span class="inline btn-wrapped" data-section="4"><svg class="icon icon-download"><use xlink:href="#icon-download"></use></svg></span></li>
 	<li class="inline"><span class="inline btn-wrapped" data-section="5"><svg class="icon icon-home"><use xlink:href="#icon-home"></use></svg></span></li>
 </ul>
-<p class="article-title">引用组件示例:</p>
+<p class="article-title">模版引入组件示例(如何使用多个组件拼装出一个页面):</p>
 <p class="article-content">
-	<div ks-type="ui/Button" ks-props="title: 'ui/Button 1', onClick: onClickButton1" ks-node="button1"></div>
-	<div ks-type="ui/Button" ks-props="title: 'ui/Button Toggle disabled', onClick: onClickButton2" ks-node="button2"></div>
+	<div ks-type="ui/Button" ks-props="title: 'ui/Button 1 点我', onClick: onClickButton1" ks-node="button1"></div>
+	<div ks-type="ui/Button" ks-props="title: 'ui/Button Toggle disabled 点我', onClick: onClickButton2" ks-node="button2"></div>
 </p>
