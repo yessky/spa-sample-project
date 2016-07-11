@@ -144,3 +144,9 @@ email: admin@veryos.com
 qq: 441548727
 
 github: yessky
+
+## License
+
+NOTE: 使用请保留示例文件、代码中的版权信息
+
+`kspack` is available under the terms of the <a href="https://github.com/yessky/spa-sample-project/blob/master/LICENSE.md">MIT License.</a>
