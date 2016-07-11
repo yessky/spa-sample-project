@@ -145,6 +145,10 @@ qq: 441548727
 
 github: yessky
 
+## 6. 案例
+
+<a href="http://m.music.migu.cn" target="_blank">咪咕音乐触屏版</a>
+
 ## License
 
 NOTE: 使用请保留示例文件、代码中的版权信息
