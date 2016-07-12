@@ -45,9 +45,9 @@ gulpfile.js gulp任务配置文件
 
 kspack.profile.js 线上构建任务的配置文件
 
-kspack.js cmd模块及资源打包模块（用法见gulpfile.js@kspack任务）
+kspack.js amd/cmd模块及资源打包模块（用法见gulpfile.js@kspack任务 用法见https://github.com/yessky/kspack）
 
-*.tpl 项目及项目业务的一些配置文件模板（配置文件需要gulp启动时动态生成）
+*.tpl 生成项目构建及项目业务的配置文件模板（配置文件需要gulp启动时动态生成）
 ```
 
 ### 2.2. 源码结构（目录即package）
@@ -63,7 +63,7 @@ vendor 三方库资源(可能是html/js/css)
 
 base 核心库
 
-ui 基础ui库
+ui ui组件库
 
 app 项目实际业务的资源
 
@@ -75,13 +75,13 @@ app 项目实际业务的资源
 ### 2.3. 主要模块介绍
 
 ```
-base/k.js CMD风格的loader
+base/k.js AMD/CMD模块的loader
 
 base/Widget.js 所有UI组件的基类（通常情况下UI组件实现必须继承该模块，除非非常了解base/_Widget*.js, base/_Template*.js）
 
 base/dom.js dom操作库（一个能够jquery/zepto相关方法中间代理模块）
 
-base/aspect.js AOP变成实现，可以在方法之前之后之间切入
+base/aspect.js AOP实现，可以在方法之前之后之间切入
 
 base/on.js 事件绑定模块
 
@@ -98,8 +98,6 @@ app/app.js 项目入口
 app/common.js 包含项目公用的辅助方法
 
 app/routes.js 负责项目前端路由管理(路由的具体实现在base/router.js，从backbone中分离得到该模块)
-
-app/medias.js 负责项目全局的音频/视频播放控制
 
 app/ajax.js 负责项目ajax交互（对zepto/jquery的ajax方法的再一次封装）
 
