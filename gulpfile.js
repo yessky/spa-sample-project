@@ -29,7 +29,7 @@ var release = false;
 var hotcached = {};
 var runTimestamp = Math.round(Date.now()/1000);
 var reloadTimer = null;
-var copyUrl = null;
+var copyUrls = [];
 
 var paths = {
 	src: __dirname + config.paths.src,
@@ -136,9 +136,10 @@ gulp.task("sass", function() {
 gulp.task("copy", function() {
 	var base = paths.src;
 	var dest = release ? paths.temp : paths.dev;
-	return gulp.src(copyUrl ? [copyUrl] : [
+	var urls = copyUrls.slice(0);
+	copyUrls = [];
+	return gulp.src(urls.length ? urls : [
 			base + "/*.ico",
-			base + "/fonts/*",
 			base + "/{vendor,base,ui,app,images,mock-json}/**/*.{html,js,css,png,svg,gif,jpg,json}"
 		], {base: base})
 		.pipe(gulp.dest(dest));
@@ -256,44 +257,58 @@ gulp.task("server", function() {
 		var url = obj.path.replace(/\\/g, "/");
 		var absurl = url;
 		url = path.relative(paths.src, url);
-		var tasks = [];
 		console.log("[KS] " + url);
 
 		// svg slices
 		if (/slices\/.+\.svg$/.test(url)) {
-			tasks.push("svgsprite");
+			pushTask("svgsprite");
 		}
 
 		// png slices
 		if (/slices\/.+\.png$/.test(url)) {
-			tasks.push("iconsprite");
+			pushTask("iconsprite");
 		}
 
 		// scss
 		if (/\.scss$/.test(url)) {
-			tasks.push("sass");
+			pushTask("sass");
 		}
 
 		if (/\.ico$|(?:base|vendor|ui|app|images|mock-json)\/.*?\.(?:html|js|css|png|svg|jpg|gif|ttf|woff|eot|json)$/.test(url)) {
-			copyUrl = absurl;
-			tasks.push("copy");
+			copyUrls.push(absurl);
+			pushTask("copy");
 		}
 
-		// if (hotcached) {
-		// 	for (var p in hotcached) {
-		// 		if (absurl.indexOf(p) > 0) {
-		// 			tasks.push("import");
-		// 			break;
-		// 		}
-		// 	}
-		// }
-
-		tasks.push("import");
-
-		if (tasks.length) {
-			sequence.apply(null, tasks)
+		if (hotcached) {
+			for (var p in hotcached) {
+				if (absurl.indexOf(p) > 0) {
+					pushTask("import");
+					break;
+				}
+			}
 		}
+
+		rebuild();
 	});
+
+	function pushTask(name) {
+		if (rebuildTasks.indexOf(name) === -1) {
+			rebuildTasks.push(name);
+		}
+	}
+
+	function rebuild() {
+		if (rebuildTimer) {
+			clearTimeout(rebuildTimer);
+		}
+		rebuildTimer = setTimeout(function() {
+			var tasks = rebuildTasks.slice(0);
+			rebuildTasks = [];
+			if (tasks.length) {
+				sequence.apply(null, tasks);
+			}
+		}, 500);
+	}
 
 	// # 刷新浏览器
 	// # 限制浏览器刷新频率
