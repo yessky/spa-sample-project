@@ -252,6 +252,10 @@ gulp.task("server", function() {
 		, notify: false
 	});
 
+	var rebuildTimer = null;
+	var reloadTimer = null;
+	var rebuildTasks = [];
+
 	// # watch src资源, 调用相关任务预处理
 	watch(paths.src + "/**/*", function(obj) {
 		var url = obj.path.replace(/\\/g, "/");
